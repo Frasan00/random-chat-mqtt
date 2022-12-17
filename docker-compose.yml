@@ -1,0 +1,20 @@
+version: "3"
+services:
+
+  server:
+    environment:
+      - BROKER_URL=mttq://broker.hivemq.com
+    build: 
+      context: .
+    restart: always
+    command: server
+
+  user:
+    environment:
+      - BROKER_URL=mttq://broker.hivemq.com
+    build: 
+      context: .
+    restart: always
+    deploy: 
+        replicas: 2
+    command: user

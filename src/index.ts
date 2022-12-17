@@ -5,6 +5,7 @@ import User from "./classes/UserClass";
 
 const mode = process.argv[2];
 
+
 if (mode === "server"){
     const server = new Server();
     server.start();
